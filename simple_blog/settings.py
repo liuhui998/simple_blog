@@ -34,7 +34,7 @@ else:
     ALLOWED_HOSTS = []
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if not IS_HEROKU:
+if (not IS_HEROKU) or  ("DEBUG_IT" in os.environ):
     DEBUG = True
 
 # Application definition
@@ -141,6 +141,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+# Add these new lines
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
