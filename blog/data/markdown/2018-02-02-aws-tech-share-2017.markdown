@@ -1,0 +1,23 @@
+---
+layout: post
+title: 2017 AWS 技术分享
+date: 2018-02-02 06:30
+comments: true
+categories: 
+---
+
+2017年10月28号的时候，应 AWS 的邀请，我以个人名义做了《云计算上的大数据应用》的分享
+
+主要介绍了一个自己在 AWS Redshift, AWS EMR, AirFlow使用上的一些心得
+
+这是: [PPT 的 link](http://aws-big-data.liuhui998.com/)
+
+下图是AWS做的海报
+
+![AWS做的海报](/images/aws-tech-share-2017/aws_post.jpeg)
+
+做这个分享看起很风光，但是压力还是很大的；平时工作很忙，基本上没有时写PPT。
+
+分享那天早上 4点多又开始写，PPT一直到开始演讲前 1 个小时才写完。
+
+
