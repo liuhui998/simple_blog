@@ -1,5 +1,6 @@
 from pprint import pprint
 from pathlib import Path
+from ast import literal_eval
 import marko
 import os
 
@@ -16,7 +17,7 @@ class PeterMarkdownParser:
         if text:
             self.text = text.strip()
         elif file_path:
-            self.load_from_file(path)
+            self.load_from_file(file_path)
         else:
             raise Exception("text or file_path should be specified either!")
         self.parse()
@@ -38,14 +39,22 @@ class PeterMarkdownParser:
                 second_occur_hr = index
                 break
 
-        self.parse_header("\n".join(blog_lines[1:second_occur_hr]))
+        self.parse_header("\n".join(blog_lines[1:second_occur_hr]).strip())
         self.markdown_body = "\n".join(blog_lines[second_occur_hr + 1:])
         self.html_body = marko.convert(self.markdown_body)
 
     def parse_header(self, header_text):
         arr = list((item.split(": ") for item in header_text.split("\n")))
+        for index in range(len(arr)):
+
+            if arr[index][0] == "categories:":
+                arr[index][0] = "categories"
+                arr[index].append("[]")
         res = dict(arr)
-        self.categories = res['categories']
+
+        #pprint(res)
+        #pprint(res['categories'])
+        self.categories = literal_eval(res['categories'])
         self.title = res['title']
         self.date = res['date']
 
@@ -65,7 +74,7 @@ if __name__ == "__main__":
     base_dir = Path(__file__).resolve().parent
     path = os.path.join(base_dir, "markdown",
                         "2020-08-28-do-not-be-anxious.markdown")
-
+    #2019-11-20-mid-life-crisis.markdown
     p = PeterMarkdownParser(file_path=path)
     print(p)
 
