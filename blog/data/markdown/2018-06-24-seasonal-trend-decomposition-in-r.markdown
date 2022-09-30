@@ -3,7 +3,7 @@ layout: post
 title: "从数据中提取季节性和趋势 [2-1]"
 date: 2018-06-24 14:05
 comments: true
-categories: 
+categories:
 ---
 
 因为最近在做销售预测的一些工作，同时也在Team内做一些小的分享；为了让自己把一些基础概念搞的更清楚，我试着翻译了一些有趣的文章。只是自己练练，哈哈！
@@ -17,7 +17,7 @@ categories:
 
 本文来自: [Extracting Seasonality and Trend from Data: Decomposition Using R](https://anomaly.io/seasonal-trend-decomposition-in-r/)
 
-![time series decomposition seasonal trend](/images/seasonal-trend-decomposition-in-r/time-series-decomposition-seasonal-trend.png)
+![time series decomposition seasonal trend](/static/images/seasonal-trend-decomposition-in-r/time-series-decomposition-seasonal-trend.png)
 
 时间序列分解时间序列分成三个子序列。
 
@@ -44,17 +44,17 @@ categories:
 为了实现成功的分解，在加法和乘法模型之间进行选择非常重要，这需要分析系列。例如，当时间序列增加时，季节性的大小是否会增加？
 
 澳大利亚啤酒生产 - 季节性变化(方差)看起来不变; 当时间序列值增加时它不会改变。我们应该使用加法模型。
-![aus beer produce, additive-model ](/images/seasonal-trend-decomposition-in-r/additive-model.png)
+![aus beer produce, additive-model ](/static/images/seasonal-trend-decomposition-in-r/additive-model.png)
 
 航空公司乘客数量 - 随着时间序列数量的增加，季节性变化(方差)也随之增加。这里我们应该使用乘法模型。
-![Airline Passenger Numbers, Multiplicative-model ](/images/seasonal-trend-decomposition-in-r/multiplicative-model.png)
+![Airline Passenger Numbers, Multiplicative-model ](/static/images/seasonal-trend-decomposition-in-r/multiplicative-model.png)
 
 
-** 加法模型：时间序列=季节性+趋势+随机 ** 
+** 加法模型：时间序列=季节性+趋势+随机 **
 
 *** 译注：如果时间序列的波峰波谷的差距一直差不多，就用加法模型。***
 
-** 乘法模型：时间序列=趋势\*季节性\*随机 ** 
+** 乘法模型：时间序列=趋势\*季节性\*随机 **
 
 *** 译注：如果时间序列的波峰波谷的差距随着时间推移而一直加大，就用乘法模型。***
 
@@ -81,7 +81,7 @@ timeserie_beer = tail(head(ausbeer, 17*4+2),17*4-4)
 plot(as.ts(timeserie_beer))
 ```
 
-![aus beer produce, additive-model ](/images/seasonal-trend-decomposition-in-r/additive-model.png)
+![aus beer produce, additive-model ](/static/images/seasonal-trend-decomposition-in-r/additive-model.png)
 
 #### 乘法模型
 
@@ -95,7 +95,7 @@ timeserie_air = AirPassengers
 plot(as.ts(timeserie_air))
 ```
 
-![Airline Passenger Numbers, Multiplicative-model ](/images/seasonal-trend-decomposition-in-r/multiplicative-model.png)
+![Airline Passenger Numbers, Multiplicative-model ](/static/images/seasonal-trend-decomposition-in-r/multiplicative-model.png)
 
 
 ### 第2步：检测趋势
@@ -119,10 +119,10 @@ lines(trend_beer)
 plot(as.ts(trend_beer))
 ```
 澳洲啤酒实际产量与趋势（移动平均数）的叠加
-![aus beer produce, additive-model  : time series + trend](/images/seasonal-trend-decomposition-in-r/additive-moving-average.png)
+![aus beer produce, additive-model  : time series + trend](/static/images/seasonal-trend-decomposition-in-r/additive-moving-average.png)
 
 澳洲啤酒产量趋势（移动平均数）
-![aus beer produce, additive-model trend](/images/seasonal-trend-decomposition-in-r/additive-trend.png)
+![aus beer produce, additive-model trend](/static/images/seasonal-trend-decomposition-in-r/additive-trend.png)
 
 
 #### 乘法模型

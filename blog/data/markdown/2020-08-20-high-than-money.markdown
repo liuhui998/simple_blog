@@ -10,7 +10,7 @@ categories: ["书摘","懒惰"]
 
 这是在英国发生的事情： 一位众议员整天被压力与厌烦折磨，有一天他坐车经过家门口。发现一位穿着寒酸的清洁工，虽然满头大汗，却唱着歌，面露愉快表情扫街。议员甚感诧异下车问他：“这个工作会让你觉得如此愉快吗？” 清洁工回答说：“是的，我正在净化神所创造美丽世界的一个角落。”
 
-![Mountain ](/images/lazy-book/high-than-money/mountain.jpeg)
+![Mountain ](/static/images/lazy-book/high-than-money/mountain.jpeg)
 
 Photo from [unsplash](https://unsplash.com/photos/8Nql6oVT_1A)
 

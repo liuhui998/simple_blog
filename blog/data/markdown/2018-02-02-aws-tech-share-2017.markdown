@@ -3,7 +3,7 @@ layout: post
 title: 2017 AWS 技术分享
 date: 2018-02-02 06:30
 comments: true
-categories: 
+categories:
 ---
 
 2017年10月28号的时候，应 AWS 的邀请，我以个人名义做了《云计算上的大数据应用》的分享
@@ -14,7 +14,7 @@ categories:
 
 下图是AWS做的海报
 
-![AWS做的海报](/images/aws-tech-share-2017/aws_post.jpeg)
+![AWS做的海报](/static/images/aws-tech-share-2017/aws_post.jpeg)
 
 做这个分享看起很风光，但是压力还是很大的；平时工作很忙，基本上没有时写PPT。
 

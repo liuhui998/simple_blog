@@ -12,7 +12,7 @@ categories: ["圣经","马太福音"]
 
 但是我们如果知道自己只是受造物，这结局会大不一样？
 
-![road](/images/unsplash/9X0tqbxCFpI.jpg)
+![road](/static/images/unsplash/9X0tqbxCFpI.jpg)
 
 Photo from [unsplash](https://unsplash.com/photos/9X0tqbxCFpI)
 

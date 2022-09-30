@@ -9,7 +9,7 @@ categories: ["书摘","懒惰"]
 
 那些像门在枢纽处转动，却没有任何进步的人。并不是在生活，而是被生活拖着走。而且是因为不得不活下去而无奈地被生活牵着鼻子走，这样的人生即使努力到流鼻血的程度，也是没有丝毫是为神而活。
 
-![road between green grass field near mountains under blue and brown sky at golden hour photo – Free Italy Image on Unsplash](/images/lazy-book/empty-heart/road_between_green_grass.jpeg)
+![road between green grass field near mountains under blue and brown sky at golden hour photo – Free Italy Image on Unsplash](/static/images/lazy-book/empty-heart/road_between_green_grass.jpeg)
 
 Photo from [unsplash](https://unsplash.com/photos/r9RW20TrQ0Y)
 
