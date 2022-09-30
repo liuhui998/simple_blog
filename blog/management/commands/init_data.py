@@ -27,6 +27,31 @@ class Command(BaseCommand):
         Category.objects.all().delete()
         Project.objects.all().delete()
 
+    def init_projects_data(self):
+        p1 = Project(
+            title='Git Community Book 中文版',
+            description=
+            '一本介绍 Git 技术使用及原理的图书. https://github.com/liuhui998/gitbook',
+            technology='Git',
+            image='img/project1.png')
+        p1.save()
+
+        p2 = Project(
+            title='Spserver',
+            description=
+            '一个开源 C++ 高并发网络框架（我只贡献了2个性能 patch. https://github.com/liuhui998/spserver',
+            technology='C++',
+            image='img/project1.png')
+        p2.save()
+
+        p3 = Project(
+            title='Python Basic',
+            description=
+            '一本基础 Python 习题集. https://github.com/liuhui998/python-basic',
+            technology='Python Notebook',
+            image='img/project1.png')
+        p3.save()
+
     def handle(self, *args, **options):
         self.stdout.write('start init data...')
         # loop all markdown files
@@ -43,6 +68,7 @@ class Command(BaseCommand):
 
         self.clean_all_data()
         # insert into database
+        self.init_projects_data()
 
         for markdown_file in markdown_files:
             print(">" * 80)
