@@ -60,4 +60,12 @@ class Command(BaseCommand):
                         created_on=parser.date)
             #print(post.created_on)
             post.save()
+
+            for category_name in parser.categories:
+                category = Category.objects.filter(name="test").first()
+                if not category:
+                    category = Category(name=category_name)
+                    category.save()
+                post.categories.add(category)
+
             Post.objects.filter(id=post.id).update(created_on=parser.date)
