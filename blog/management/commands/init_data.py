@@ -20,7 +20,8 @@ from projects.models import *
 class Command(BaseCommand):
     """Django command to wait for database."""
 
-    def clean_all_data():
+    def clean_all_data(self):
+        self.stdout.write("start clean all old data...")
         Comment.objects.all().delete()
         Post.objects.all().delete()
         Category.objects.all().delete()
@@ -40,13 +41,23 @@ class Command(BaseCommand):
             if file_name.endswith(ext):
                 markdown_files.append(os.path.join(markdown_dir, file_name))
 
+        self.clean_all_data()
         # insert into database
+
         for markdown_file in markdown_files:
             print(">" * 80)
             print(markdown_file)
+
             parser = PeterMarkdownParser(file_path=markdown_file)
-            print(parser)
+            print(parser.date)
+            if parser.date == None:
+                print(parser.header_text)
+                break
+
+            #print(parser)
             post = Post(title=parser.title,
                         body=parser.html_body,
                         created_on=parser.date)
+            #print(post.created_on)
             post.save()
+            Post.objects.filter(id=post.id).update(created_on=parser.date)
